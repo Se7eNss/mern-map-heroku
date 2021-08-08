@@ -13,9 +13,9 @@ app.use(cookieParser());
 app.use(express.json());
 
 
-app.use(express.static(path.join(__dirname,"build")));
+app.use(express.static(path.join(__dirname,"builds")));
 app.get("/",(req,res,next)=>{
-    res.sendFile(path.join(__dirname,"build","index.html"))
+    res.sendFile(path.join(__dirname,"builds","index.html"))
 });
 
 app.use('/api/v1',pin);
