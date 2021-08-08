@@ -13,13 +13,13 @@ app.use(cookieParser());
 app.use(express.json());
 
 
-app.use(express.static(path.join(__dirname,"builds")));
+app.use(express.static(path.join(__dirname,"build")));
 app.get("/",(req,res,next)=>{
-    res.sendFile(path.join(__dirname,"builds","index.html"))
+    res.sendFile(path.join(__dirname,"build","index.html"))
 });
 
-app.use('/api/v1',pin);
-app.use('/api/v1',user);
+app.use('',pin);
+app.use('',user);
 
 app.use(errorMiddleware);
 
